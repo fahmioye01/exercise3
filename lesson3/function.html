@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script src="main.js"></script>
+    <script src="./filter.js"></script>
+  </head>
+  <body>
+    <form class="form-inline">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">rotation_period</th>
+          <th scope="col">orbital_period</th>
+        </tr>
+      </thead>
+      <tbody id="target">
+        <tr>
+          <!-- onkeyup -->
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      //console.log(orang);
+      var arrayOrang = orang.results;
+      arrayOrang.forEach(function(el) {
+        console.log(el);
+        var output = `
+        <tr>
+          <td>${el.name}<td>
+          <td>${el.rotation_period}<td>
+          <td>${el.orbital_period}<td>
+        </tr>
+        `;
+        document
+          .querySelector("#target")
+          .insertAdjacentHTML("beforeend", output);
+      });
+
+      //document.write("<table>");
+      //document.write("<tr><th>" + orang.results + "</th></tr>");
+      function myFunction(param) {
+        var filterKeyword = dociment
+          .querySelector("myInput")
+          .value.toUpperCase();
+        var tableRows = document
+          .querySelector("myTable")
+          .querySelectorAll("tr");
+
+        for (var i = 0; i < tableRows.length; i++) {
+          var td = tableRows[i].querySelectorAll("td")[1];
+        }
+      }
+    </script>
+  </body>
+</html>
